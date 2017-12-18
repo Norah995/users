@@ -33,8 +33,8 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuarios</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Registrar</a>
-              <a class="dropdown-item" href="#">Listar</a>
+              <a class="dropdown-item" href="http://primero.test/registro">Registrar</a>
+              <a class="dropdown-item" href="http://primero.test/lista">Listar</a>
             </div>
           </li>
         </ul>
@@ -42,12 +42,7 @@
     </nav>
 
     <main role="main" class="container">
-
-      <div class="row mt-3">
-        <div class="col-8">
           @yield('content')
-        </div>
-      </div>
 
     </main><!-- /.container -->
 
