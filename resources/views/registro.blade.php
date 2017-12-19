@@ -1,25 +1,27 @@
 <div class="container" align="center">
-      <form>
+      <form action="{{route('registrar')}}" method="POST">
+        <input type="hidden" name="_method" value="POST">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
 		<div class="form-group col-md-4">
-   			<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombres">
+   			<input type="text" class="form-control" name='nombres' id="formGroupExampleInput" placeholder="Nombres">
   		</div>
   		<div class="form-group col-md-4">
-   			<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Apellidos">
+   			<input type="text" class="form-control" name='apellidos' id="formGroupExampleInput" placeholder="Apellidos">
   		</div>
   		<div class="form-group col-md-4">
-      		<select id="inputState" class="form-control">
+      		<select id="inputState" class="form-control" name='sexo'>
         	<option selected>Femenino</option>
         	<option>Masculino</option>
       		</select>
     	</div>
     	<div class="form-group col-md-4">
-      		<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      		<input type="email" class="form-control" name='email' id="inputEmail4" placeholder="Email">
     	</div>	
       <div class="form-group col-md-4">
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Contraseña">
+          <input type="password" class="form-control" name='contraseña' id="formGroupExampleInput" placeholder="Contraseña">
       </div>	
 		<div>
-			<button type="button" class="btn btn-danger">REGISTRAR</button>
+			<button type="summit" class="btn btn-danger">REGISTRAR</button>
 		</div>
     </form>
     </div> 
