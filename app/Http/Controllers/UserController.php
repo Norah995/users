@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\User;
 class UserController extends Controller
 {
     public function registro()
@@ -13,7 +13,8 @@ class UserController extends Controller
 
     public function lista()
     {
-    	return view('lista');
+    	$users=User::all();
+    	return view('lista', compact('users'));
     }
     /*public function re(){
     	return "hola";
@@ -22,9 +23,22 @@ class UserController extends Controller
     public function re(Request $request){
     	$nombres = $request->nombres;
     	$apellidos = $request->apellidos;
-    	$sexo = $request->sexo;
+    	
+    		$sexo = $request->sexo;	
+    	
+    	
+    	$email=$request->email;
+    	$contraseña=bcrypt($request->contraseña);
 
-    	return $nombres.' '.$apellidos.' '.$sexo ;
+    	$user=new User;
+    	$user->nombre=$nombres;
+    	$user->apellido=$apellidos;
+    	$user->sexo=$sexo;
+    	$user->email=$email;
+    	$user->contraseña=$contraseña;
+    	$user->save();
+return redirect('lista');
+    	//return $nombres.' '.$apellidos.' '.$sexo.' '.$email.' '.$contraseña ;
     	//return 'hola';
     }
 

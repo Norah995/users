@@ -10,8 +10,8 @@
   		</div>
   		<div class="form-group col-md-4">
       		<select id="inputState" class="form-control" name='sexo'>
-        	<option selected>Femenino</option>
-        	<option>Masculino</option>
+        	<option value='Femenino' selected>Femenino</option>
+        	<option value='Masculino'>Masculino</option>
       		</select>
     	</div>
     	<div class="form-group col-md-4">

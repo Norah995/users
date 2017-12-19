@@ -19,6 +19,10 @@ Route::get('/registro', 'UserController@registro');
 
 Route::get('/lista', 'UserController@lista');
 
+//Route::get('/all',['as'=>'all', 'uses'=>'QueryController']);
+
 Route::post('registrar', ['as'=>'registrar', 'uses'=>'UserController@re']);
+
+
 
 Route::resource('/usuario','UsuarioController');
