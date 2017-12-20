@@ -23,10 +23,7 @@ class UserController extends Controller
     public function re(Request $request){
     	$nombres = $request->nombres;
     	$apellidos = $request->apellidos;
-    	
-    		$sexo = $request->sexo;	
-    	
-    	
+    	$sexo = $request->sexo;	    	
     	$email=$request->email;
     	$contraseña=bcrypt($request->contraseña);
 
@@ -48,6 +45,32 @@ class UserController extends Controller
         $user=User::find($id);
         $user->delete();
         return redirect('lista');
+    }
+
+    public function edita($id){
+       $user=User::where('id', $id) ->first();
+
+       // return 'hola';
+       return view('modifica', ['user'=>$user]);
+    }
+
+    public function modifica(Request $request, $id){
+        $nnombre=$request->nombres;
+        $napellido=$request->apellidos;
+        $nsexo = $request->sexo;         
+        $nemail=$request->email;
+        $ncontraseña=bcrypt($request->contraseña);
+
+        $user=User::find($id);
+        $user->nombre=$nnombre;
+        $user->apellido=$napellido;
+        $user->sexo=$nsexo;
+        $user->email=$nemail;
+        $user->contraseña=$ncontraseña;
+        $user->save();
+        //return 'ya';
+        return redirect('lista');
+
     }
 
 

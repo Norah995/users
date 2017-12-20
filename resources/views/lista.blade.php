@@ -25,7 +25,7 @@
 			<td>{{ $user->sexo}}</td>
 			<td>{{ $user->email}}</td>
 			<td>{{ $user->contraseña}}</td>
-			<th><a href=""> Modificar </a></th>
+			<th><a href="/edita/{{ $user->id}}"> Modificar </a></th>
             <th><a href="/borra/{{ $user->id}}"> Eliminar </a></th>
 		</tr>
 	@endforeach

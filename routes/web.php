@@ -14,17 +14,26 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+//solo va al index
 Route::get('/registro', 'UserController@registro');
-
+//metodo listar
 Route::get('/lista', 'UserController@lista');
-
+//metodo eliminar
 Route::get('/borra/{id}', 'UserController@elimina');
 
 //Route::get('/all',['as'=>'all', 'uses'=>'QueryController']);
-
+//meodo registrar
 Route::post('registrar', ['as'=>'registrar', 'uses'=>'UserController@re']);
+//actualizar
 
+Route::get('/edita/{id}', 'UserController@edita');
+Route::post('/modificar/{id}', 'UserController@modifica');
 
 
 Route::resource('/usuario','UsuarioController');
+
+
+
+Route::get('/mo', function(){
+	return view('modifica');
+});
