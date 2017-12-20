@@ -18,7 +18,7 @@
           <input type="email" class="form-control" name='email' id="inputEmail4" placeholder="Email" value="{{$user->email}}">
       </div>  
       <div class="form-group col-md-4">
-          <input type="password" class="form-control" name='contraseña' id="formGroupExampleInput" placeholder="Contraseña" value="{{$user->contraseña}}">
+          <input type="password" class="form-control" name='contraseña' id="formGroupExampleInput" placeholder=" Modifica Contraseña (conservarla)">
       </div>  
     <div>
       <button type="summit" class="btn btn-danger">MODIFICAR</button>

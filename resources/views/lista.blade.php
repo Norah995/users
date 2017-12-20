@@ -1,7 +1,7 @@
 @extends('layaut')
 
 @section('content')
- <!– {{$users}}–>
+ <!–{{$users}}->
     <h1><center>LISTADO DE USUARIOS</center></h1>
     <table class="table">
 	<thead class="thead-dark">
@@ -11,7 +11,7 @@
 			<th>Apellido</th>
 			<th>Sexo</th>
 			<th>Email</th>
-			<th>Contraseña</th>
+			<!--<th>Contraseña</th>-->
 			<th></th>
             <th></th>
 		</tr>
@@ -24,7 +24,7 @@
 			<td>{{ $user->apellido}}</td>
 			<td>{{ $user->sexo}}</td>
 			<td>{{ $user->email}}</td>
-			<td>{{ $user->contraseña}}</td>
+			<!-- <td>{{ $user->contraseña}}</td>-->
 			<th><a href="/edita/{{ $user->id}}"> Modificar </a></th>
             <th><a href="/borra/{{ $user->id}}"> Eliminar </a></th>
 		</tr>

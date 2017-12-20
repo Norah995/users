@@ -43,6 +43,7 @@ class UserController extends Controller
         //User::destroy($id);
         //return view('');
         $user=User::find($id);
+        
         $user->delete();
         return redirect('lista');
     }
@@ -59,7 +60,7 @@ class UserController extends Controller
         $napellido=$request->apellidos;
         $nsexo = $request->sexo;         
         $nemail=$request->email;
-        $ncontraseña=bcrypt($request->contraseña);
+        $ncontraseña=$request->contraseña;
 
         $user=User::find($id);
         $user->nombre=$nnombre;
@@ -70,9 +71,5 @@ class UserController extends Controller
         $user->save();
         //return 'ya';
         return redirect('lista');
-
     }
-
-
-
 }
