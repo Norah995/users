@@ -37,9 +37,17 @@ class UserController extends Controller
     	$user->email=$email;
     	$user->contraseña=$contraseña;
     	$user->save();
-return redirect('lista');
+        return redirect('lista');
     	//return $nombres.' '.$apellidos.' '.$sexo.' '.$email.' '.$contraseña ;
     	//return 'hola';
+    }
+
+    public function elimina($id){
+        //User::destroy($id);
+        //return view('');
+        $user=User::find($id);
+        $user->delete();
+        return redirect('lista');
     }
 
 
