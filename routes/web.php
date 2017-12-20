@@ -35,5 +35,5 @@ Route::resource('/usuario','UsuarioController');
 
 
 Route::get('/mo', function(){
-	return view('modifica');
+	return view('modalf');
 });

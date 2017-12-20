@@ -26,7 +26,13 @@
 			<td>{{ $user->email}}</td>
 			<!-- <td>{{ $user->contraseña}}</td>-->
 			<th><a href="/edita/{{ $user->id}}"> Modificar </a></th>
-            <th><a href="/borra/{{ $user->id}}"> Eliminar </a></th>
+            <!-- <th><a href="/borra/{{ $user->id}}"> Eliminar </a></th>-->
+            <th><a href="/mo"> Eliminar </a></th>
+            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button></td>
+
 		</tr>
 	@endforeach
+
 @endsection
