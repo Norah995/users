@@ -25,13 +25,9 @@
 			<td>{{ $user->sexo}}</td>
 			<td>{{ $user->email}}</td>
 			<!-- <td>{{ $user->contraseña}}</td>-->
-			<th><a href="/edita/{{ $user->id}}"> Modificar </a></th>
+			<td><a class="btn btn-primary" href="/edita/{{ $user->id}}" role="button">Modificar</a></td>	
             <!-- <th><a href="/borra/{{ $user->id}}"> Eliminar </a></th>-->
-            <th><a href="/mo"> Eliminar </a></th>
-            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button></td>
-
+            <td>@include('modalf')</td>
 		</tr>
 	@endforeach
 

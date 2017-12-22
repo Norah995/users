@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 //solo va al index
 Route::get('/registro', 'UserController@registro');
@@ -31,9 +31,3 @@ Route::post('/modificar/{id}', 'UserController@modifica');
 
 
 Route::resource('/usuario','UsuarioController');
-
-
-
-Route::get('/mo', function(){
-	return view('modalf');
-});
