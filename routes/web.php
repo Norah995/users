@@ -31,4 +31,4 @@ Route::post('/modificar/{id}', 'UserController@modifica');
 
 Route::resource('/usuario','UsuarioController');
 //aumentado
-Route::get('registrar', ['as'=>'registrar', 'uses'=>'UserController@index']);
+//Route::get('registrar', ['as'=>'registrar', 'uses'=>'UserController@index']);

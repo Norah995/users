@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Illuminate\Http\Request;
 use App\User;
 class UserController extends Controller
@@ -26,23 +27,22 @@ class UserController extends Controller
     	return "hola";
     	//return $request->all();
     }*/
-    public function re(Request $request){
-    	
-
+    public function re(Request $request){    	
     	$user=new User;
 
-        $va= \Validator::make($request->all(),[
-            'nombres' => 'required',
-            'apellidos' => 'required',
+        $va= Validator::make($request->all(),[
+            'nombre' => 'required',
+            'apellido' => 'required',
             'sexo' => 'required|in:Femenino,Masculino',
             'email' => 'required|email|unique',
             'contraseña' => 'required'
         ]);
         if ($va->fails())
         {
-            return Redirect()::back()->withInput()->withErrors($va->getErrors());
+            return redirect()->back()->withInput()->withErrors($va->errors());
+            //return 'error';
         }
-        /*$nombres = $request->nombres;
+        $nombres = $request->nombres;
         $apellidos = $request->apellidos;
         $sexo = $request->sexo;         
         $email=$request->email;
@@ -53,10 +53,9 @@ class UserController extends Controller
     	$user->sexo=$sexo;
     	$user->email=$email;
     	$user->contraseña=$contraseña;
-    	$user->save();*/
-        $user->create($request->all());
-        $users = Client::all();
-        return redirect('lista', compact('users'));
+    	$user->save();
+       // $user->create($request->all());
+        return redirect('lista');
     	//return $nombres.' '.$apellidos.' '.$sexo.' '.$email.' '.$contraseña ;
     	//return 'hola';
     }
