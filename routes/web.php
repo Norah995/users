@@ -25,9 +25,10 @@ Route::get('/borra/{id}', 'UserController@elimina');
 //meodo registrar
 Route::post('registrar', ['as'=>'registrar', 'uses'=>'UserController@re']);
 //actualizar
-
 Route::get('/edita/{id}', 'UserController@edita');
 Route::post('/modificar/{id}', 'UserController@modifica');
 
 
 Route::resource('/usuario','UsuarioController');
+//aumentado
+Route::get('registrar', ['as'=>'registrar', 'uses'=>'UserController@index']);
